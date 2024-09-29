@@ -141,6 +141,7 @@ class PysimmSystem:
         simulation = pysimm.lmps.Simulation(self.pysimm_system, name="my_simulation")
         try:
             simulation.run(save_input=True)
+            simulation.write_input()
         except TypeError as e:
             print(f"Warning: TypeError {e} caught and skipped.")
         shutil.move(
